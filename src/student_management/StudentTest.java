@@ -1,5 +1,6 @@
 package student_management;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class StudentTest {
@@ -15,8 +16,9 @@ public class StudentTest {
             System.out.println("0. Hiển thị danh sách !");
             System.out.println("1. Thêm Sinh viên");
             System.out.println("2. Thêm Giáo viên");
-            System.out.println("3. Xoá ");
-            System.out.println("4. Thoát ");
+            System.out.println("3. Tìm kiếm ");
+            System.out.println("4. Xoá ");
+            System.out.println("5. Thoát ");
             choice = Integer.parseInt(scanner.nextLine());
 
             switch (choice) {
@@ -32,13 +34,17 @@ public class StudentTest {
                     i++;
                     addNewTeacher(persons, i);
                     break;
-
                 case 3:
+                    search(persons);
+                    break;
+                case 4:
                     remove(persons);
                     System.out.println("Danh sách sau khi xoá là :");
                     display(persons);
                     break;
 
+                case 5:
+                    System.exit(5);
             }
         }
     }
@@ -97,11 +103,22 @@ public class StudentTest {
 
     public static void remove(Person[] persons) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập id muốn xoá !");
+        System.out.println("Nhập tên muốn xoá !");
         String deleteName = scanner.nextLine();
         for (int j = 0; j < persons.length; j++) {
             if (persons[j] != null && persons[j].getName().equals(deleteName)) {
                 persons[j] = null;
+            }
+        }
+    }
+
+    public static void search(Person[] persons){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Nhập tên muốn tìm kiếm");
+        String searchName = scanner.nextLine();
+        for (Person person : persons) {
+            if (person!=null&& person.getName().equals(searchName)) {
+                System.out.println(person);
             }
         }
     }
