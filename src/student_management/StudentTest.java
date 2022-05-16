@@ -112,12 +112,12 @@ public class StudentTest {
         }
     }
 
-    public static void search(Person[] persons){
+    public static void search(Person[] persons) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập tên muốn tìm kiếm");
         String searchName = scanner.nextLine();
         for (Person person : persons) {
-            if (person!=null&& person.getName().equals(searchName)) {
+            if (person != null && person.getName().equals(searchName)) {
                 System.out.println(person);
             }
         }
