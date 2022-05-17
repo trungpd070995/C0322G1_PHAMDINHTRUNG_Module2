@@ -5,13 +5,13 @@ import java.util.Scanner;
 
 public class StudentTest {
     public static void main(String[] args) {
-        int i = -1;
+        int i = 0;
         Scanner scanner = new Scanner(System.in);
         Person[] persons = new Person[50];
 
-        int choice = -1;
+        String choice;
 
-        while (choice != 4) {
+        while (true) {
             System.out.println("*****MENU QUẢN LÝ NHÂN VIÊN & HỌC VIÊN*****");
             System.out.println("0. Hiển thị danh sách !");
             System.out.println("1. Thêm Sinh viên");
@@ -19,32 +19,34 @@ public class StudentTest {
             System.out.println("3. Tìm kiếm ");
             System.out.println("4. Xoá ");
             System.out.println("5. Thoát ");
-            choice = Integer.parseInt(scanner.nextLine());
+            choice = scanner.nextLine();
 
             switch (choice) {
-                case 0:
+                case "0":
                     display(persons);
                     break;
-                case 1:
-                    i++;
+                case "1":
                     addNewStudent(persons, i);
+                    i++;
                     break;
 
-                case 2:
-                    i++;
+                case "2":
                     addNewTeacher(persons, i);
+                    i++;
                     break;
-                case 3:
+                case "3":
                     search(persons);
                     break;
-                case 4:
+                case "4":
                     remove(persons);
                     System.out.println("Danh sách sau khi xoá là :");
                     display(persons);
                     break;
-
-                case 5:
+                case "5":
                     System.exit(5);
+                    break;
+                default:
+                    System.out.println("Nhập sai! Vui lòng nhập lại !");
             }
         }
     }
