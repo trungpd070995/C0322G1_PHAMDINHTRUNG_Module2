@@ -10,6 +10,7 @@ public class Student extends Person {
         super(id, name, age, gender);
     }
 
+
     public Student(int id, String name, int age, String gender, int point) {
         super(id, name, age, gender);
         this.point = point;
