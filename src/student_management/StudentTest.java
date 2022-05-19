@@ -108,7 +108,7 @@ public class StudentTest {
         System.out.println("Nhập tên muốn xoá !");
         String deleteName = scanner.nextLine();
         for (int j = 0; j < persons.length; j++) {
-            if (persons[j] != null && persons[j].getName().equals(deleteName)) {
+            if (persons[j] != null && persons[j].getName()==(deleteName)) {
                 persons[j] = null;
             }
         }
