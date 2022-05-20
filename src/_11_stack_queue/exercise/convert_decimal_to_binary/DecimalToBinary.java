@@ -5,15 +5,15 @@ import java.util.Stack;
 
 public class DecimalToBinary {
     public static void main(String[] args) {
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Nhập vào số cần chuyển đổi sang hệ nhị phân");
         int decimalNumber = scanner.nextInt();
 
         while(decimalNumber > 0){
-            stack.push(decimalNumber%2);
-            decimalNumber = decimalNumber/2;
+            stack.push(decimalNumber % 2);
+            decimalNumber = decimalNumber / 2;
         }
 
         System.out.println("Kết quả sau khi chuyển sang hệ nhị phân là");
