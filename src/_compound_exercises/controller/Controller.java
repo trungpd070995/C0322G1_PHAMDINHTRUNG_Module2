@@ -23,7 +23,7 @@ public class Controller {
             System.out.println("2.Kiểm tra mã nhân viên");
             System.out.println("3.Sắp xếp theo tên");
             System.out.println("4.Sắp xếp theo lương");
-            System.out.println("5.Sắp xếp cả hai (tên & lương");
+            System.out.println("5.Sắp xếp cả hai (tên & lương)");
             System.out.println("6.Thoát");
             int choose = Integer.parseInt(sc.nextLine());
             switch (choose) {

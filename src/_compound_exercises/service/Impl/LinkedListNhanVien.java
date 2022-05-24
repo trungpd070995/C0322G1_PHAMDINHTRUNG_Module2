@@ -25,15 +25,15 @@ public class LinkedListNhanVien {
         }
     }
 
-    public void sapXepTheoTen(){
+    public void sapXepTheoTen() {
         Collections.sort(nhanVienLinkedList, new SapXepTen());
     }
 
-    public void sapXepTheoLuong(){
+    public void sapXepTheoLuong() {
         Collections.sort(nhanVienLinkedList, new SapXepLuong());
     }
 
-    public void sapXepLuongVaTen(){
+    public void sapXepLuongVaTen() {
         Collections.sort(nhanVienLinkedList);
     }
 }

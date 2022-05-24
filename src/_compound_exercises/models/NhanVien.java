@@ -53,14 +53,14 @@ public abstract class NhanVien implements Comparable<NhanVien> {
 
     @Override
     public int compareTo(NhanVien o) {
-        if (this.tinhLuong() > o.tinhLuong()){
+        if (this.tinhLuong() > o.tinhLuong()) {
             return 1;
-        }else if (this.tinhLuong() < o.tinhLuong()){
+        } else if (this.tinhLuong() < o.tinhLuong()) {
             return -1;
-        }else {
-            if (this.ten.compareTo(o.ten) >0){
+        } else {
+            if (this.ten.compareTo(o.ten) > 0) {
                 return 1;
-            }else {
+            } else {
                 return -1;
             }
         }
@@ -69,8 +69,8 @@ public abstract class NhanVien implements Comparable<NhanVien> {
     public abstract double tinhLuong();
 }
 /**
- *Muốn sử dụng được comparable thì cần sử dụng class chứa các đối tượng cần sắp xếp implements Comparable<T>
- *và triển khai lại phương thức compareto
+ * Muốn sử dụng được comparable thì cần sử dụng class chứa các đối tượng cần sắp xếp implements Comparable<T>
+ * và triển khai lại phương thức compareto
  * Nên sử dụng comparable khi danh sách chỉ có một tiêu chí sắp xếp
  * Nếu có 2 tiêu chí sắp xếp trở lên thì bắt buộc phải dùng comparator
  * -Comparable:
