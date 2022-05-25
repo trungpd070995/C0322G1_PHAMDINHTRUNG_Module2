@@ -37,7 +37,7 @@ public class InsertSortByStep {
                 System.out.println(list[j] + " ");
             }
             System.out.println(Arrays.toString(list));
-            // Arrays. dùng để sắp xếp các phần tử trong mảng
+            // Arrays.
         }
     }
 }

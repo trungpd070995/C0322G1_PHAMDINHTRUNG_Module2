@@ -3,18 +3,24 @@ package _case_study_furama_resort.services.impl;
 import _case_study_furama_resort.services.ServiceEmployee;
 
 public class EmployeeImpl implements ServiceEmployee {
+
     @Override
-    public void displayEmployee() {
+    public void display() {
 
     }
 
     @Override
-    public void addNewEmployee() {
+    public void addNew() {
 
     }
 
     @Override
-    public void editEmployee() {
+    public void delete() {
+
+    }
+
+    @Override
+    public void edit() {
 
     }
 }

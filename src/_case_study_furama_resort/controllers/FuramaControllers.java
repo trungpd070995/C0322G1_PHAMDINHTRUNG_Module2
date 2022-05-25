@@ -1,5 +1,7 @@
 package _case_study_furama_resort.controllers;
 
+import _case_study_furama_resort.services.impl.FacilityServiceImpl;
+
 import java.util.Scanner;
 
 public class FuramaControllers {

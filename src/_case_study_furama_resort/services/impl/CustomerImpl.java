@@ -13,7 +13,7 @@ public class CustomerImpl implements ServiceCustomer {
     private static Scanner scanner = new Scanner(System.in);
 
     @Override
-    public void displayCustomer() {
+    public void display() {
         List<String[]> customerList = new ArrayList<>();
 
         for (String[] item: customerList) {
@@ -24,12 +24,18 @@ public class CustomerImpl implements ServiceCustomer {
     }
 
     @Override
-    public void addNewCustomer() {
+    public void addNew() {
 
     }
 
     @Override
-    public void editCustomer() {
+    public void delete() {
 
     }
+
+    @Override
+    public void edit() {
+
+    }
+
 }
