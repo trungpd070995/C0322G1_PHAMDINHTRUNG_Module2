@@ -17,7 +17,7 @@ public class TriangleTest {
             double c = scanner.nextDouble();
             checkTriangleSide(a, b, c);
 
-        } catch (InputMismatchException e) {
+        } catch (InputMismatchException e) { //Loi loai dau vao khong dung
             System.err.println("Nhập sai kiểu dữ liệu, xin mời nhập lại");
         } catch (IllegalTriangleException e){
             System.err.println(e.getMessage());

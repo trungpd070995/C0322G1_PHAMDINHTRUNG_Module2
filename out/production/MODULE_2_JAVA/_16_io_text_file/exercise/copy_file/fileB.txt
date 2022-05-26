@@ -1,0 +1,5 @@
+IntelliJ IDEA là môi trường phát triển tích hợp (IDE) dành cho các ngôn ngữ JVM được thiết kế để tối đa hóa năng suất
+của nhà phát triển, một IDE đa nền tảng cung cấp trải nghiệm nhất quán trên Windows, macOS và Linux. Nó thực hiện các
+công việc thường xuyên và lặp đi lặp lại cho bạn bằng cách cung cấp khả năng hoàn thành mã thông minh, phân tích mã
+tĩnh và tái cấu trúc, đồng thời cho phép bạn tập trung vào khía cạnh sáng sủa của phát triển phần mềm, làm cho nó
+không chỉ hiệu quả mà còn là một trải nghiệm thú vị.
