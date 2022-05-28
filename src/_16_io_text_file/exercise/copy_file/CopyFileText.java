@@ -20,19 +20,19 @@ public class CopyFileText {
         }
     }
 
-    public List<String> readFile(String pathFile){
+    public List<String> readFile(String pathFile) {
         List<String> listLine = new ArrayList<>();
-    try {
-        FileReader fileReader = new FileReader(pathFile);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        String line ;
+        try {
+            FileReader fileReader = new FileReader(pathFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line;
 
-        while ((line = bufferedReader.readLine()) != null) {
-            listLine.add(line);
+            while ((line = bufferedReader.readLine()) != null) {
+                listLine.add(line);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    return listLine;
+        return listLine;
     }
 }
