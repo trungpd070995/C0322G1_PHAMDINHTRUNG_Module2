@@ -1,5 +1,4 @@
 package _case_study_furama_resort.services.impl;
-
 import _case_study_furama_resort.models.facility_class.Facility;
 import _case_study_furama_resort.models.facility_class.House;
 import _case_study_furama_resort.models.facility_class.Room;

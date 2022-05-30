@@ -1,5 +1,4 @@
 package _case_study_furama_resort.services.impl;
-
 import _case_study_furama_resort.services.Service;
 
 public class BookingServiceImpl implements Service {

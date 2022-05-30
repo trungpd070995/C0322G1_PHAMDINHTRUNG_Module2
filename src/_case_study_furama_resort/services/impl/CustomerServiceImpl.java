@@ -1,8 +1,6 @@
 package _case_study_furama_resort.services.impl;
-
 import _case_study_furama_resort.models.person_class.Customer;
 import _case_study_furama_resort.services.ServiceCustomer;
-
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;

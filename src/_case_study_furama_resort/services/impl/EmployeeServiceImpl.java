@@ -1,12 +1,9 @@
 package _case_study_furama_resort.services.impl;
-
 import _case_study_furama_resort.models.person_class.Employee;
 import _case_study_furama_resort.services.ServiceEmployee;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 
 public class EmployeeServiceImpl implements ServiceEmployee {
     private static final List<Employee> employeeList = new ArrayList<>();
