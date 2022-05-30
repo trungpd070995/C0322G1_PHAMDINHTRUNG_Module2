@@ -1,8 +1,8 @@
 package _case_study_furama_resort.services.impl;
 
-import _case_study_furama_resort.services.ServiceContact;
+import _case_study_furama_resort.services.ServiceContracts;
 
-public class ContactServiceImpl implements ServiceContact {
+public class ContractsServiceImpl implements ServiceContracts {
     @Override
     public void display() {
 
