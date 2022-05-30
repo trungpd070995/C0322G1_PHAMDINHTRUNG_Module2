@@ -1,4 +1,8 @@
 package _case_study_furama_resort.services;
 
-public interface ServiceFacility extends Service {
+public interface ServiceFacility  {
+    void display();
+    void addNewVilla();
+    void addNewHouse();
+    void addNewRoom();
 }

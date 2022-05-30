@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class TriangleTest {
     public static void main(String[] args) {
-        Double.parseDouble("abc");
+      
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập vào độ dài 3 cạnh của hình tam giác");
 

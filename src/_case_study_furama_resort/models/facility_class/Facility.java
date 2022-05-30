@@ -1,8 +1,9 @@
 package _case_study_furama_resort.models.facility_class;
 
 public abstract class Facility {
+    private int id;
     private String serviceName; //Tên dịch vụ
-    private int usableArea; //Diện tích sử dụng
+    private double usableArea; //Diện tích sử dụng
     private int rentalCosts; //Chi phí thuê
     private int maximumPeople; // Số lương người tối đa
     private String rentalType; //Kiểu thuê
@@ -10,12 +11,21 @@ public abstract class Facility {
     public Facility() {
     }
 
-    public Facility(String serviceName, int usableArea, int rentalCosts, int maximumPeople, String rentalType) {
+    public Facility(int id,String serviceName, int usableArea, int rentalCosts, int maximumPeople, String rentalType) {
+        this.id = id;
         this.serviceName = serviceName;
         this.usableArea = usableArea;
         this.rentalCosts = rentalCosts;
         this.maximumPeople = maximumPeople;
         this.rentalType = rentalType;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getServiceName() {
@@ -26,11 +36,11 @@ public abstract class Facility {
         this.serviceName = serviceName;
     }
 
-    public int getUsableArea() {
+    public double getUsableArea() {
         return usableArea;
     }
 
-    public void setUsableArea(int usableArea) {
+    public void setUsableArea(double usableArea) {
         this.usableArea = usableArea;
     }
 
@@ -61,11 +71,12 @@ public abstract class Facility {
     @Override
     public String toString() {
         return "Facility{" +
-                "serviceName='" + serviceName + '\'' +
+                "id=" + id +
+                ", serviceName='" + serviceName + '\'' +
                 ", usableArea=" + usableArea +
                 ", rentalCosts=" + rentalCosts +
                 ", maximumPeople=" + maximumPeople +
-                ", retalType='" + rentalType + '\'' +
+                ", rentalType='" + rentalType + '\'' +
                 '}';
     }
 }

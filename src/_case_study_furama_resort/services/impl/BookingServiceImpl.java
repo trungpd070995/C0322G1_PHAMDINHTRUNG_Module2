@@ -1,9 +1,8 @@
 package _case_study_furama_resort.services.impl;
 
-import _case_study_furama_resort.services.ServiceEmployee;
+import _case_study_furama_resort.services.Service;
 
-public class EmployeeImpl implements ServiceEmployee {
-
+public class BookingServiceImpl implements Service {
     @Override
     public void display() {
 
