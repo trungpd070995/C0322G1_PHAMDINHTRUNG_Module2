@@ -10,9 +10,15 @@ public class EmployeeServiceImpl implements ServiceEmployee {
     private static final Scanner scanner = new Scanner(System.in);
 
     static {
-        Employee employee1 = new Employee(1, "Trung", "25", "Nam", 21432435, 1256789, "dsad", "dsad", 2345, "Đại học");
-        Employee employee2 = new Employee(2, "Thành", "24", "Nam", 23565466, 1242424, "dsad", "dsad", 2345, "Trung cấp");
-        Employee employee3 = new Employee(3, "Phước", "23", "Nam", 34534534, 1236789, "dsad", "dsad", 2345, "Cao Đẳng");
+        Employee employee1 = new Employee(
+                1, "Trung", "25", "Nam", 21432435, 1256789,
+                "dsad", "Nhân viên", 2345, "Đại học");
+        Employee employee2 = new Employee(
+                2, "Thành", "24", "Nam", 23565466, 1242424,
+                "thanh@gmail.com", "Nhân viên", 2345, "Trung cấp");
+        Employee employee3 = new Employee(
+                3, "Phước", "23", "Nam", 34534534, 1236789,
+                "phuoc@gmail.com", "Nhân viên", 2345, "Cao Đẳng");
         employeeList.add(employee1);
         employeeList.add(employee2);
         employeeList.add(employee3);
