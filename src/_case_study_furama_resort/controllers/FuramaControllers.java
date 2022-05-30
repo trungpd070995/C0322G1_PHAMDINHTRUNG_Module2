@@ -2,7 +2,6 @@ package _case_study_furama_resort.controllers;
 import _case_study_furama_resort.services.impl.CustomerServiceImpl;
 import _case_study_furama_resort.services.impl.EmployeeServiceImpl;
 import _case_study_furama_resort.services.impl.FacilityServiceImpl;
-
 import java.util.Scanner;
 
 public class FuramaControllers {
@@ -111,18 +110,20 @@ public class FuramaControllers {
     public static void facilityManagement() {
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
         while (true) {
             System.out.println(
                             "1.\tDisplay list facility \n" +
                             "2.\tAdd new facility \n" +
                             "3.\tDisplay list facility maintenance\n" +
                             "4.\tReturn main menu\n");
+            String input = scanner.nextLine();
             switch (input) {
                 case "1":
                     facilityService.display();
                     break;
                 case "2":
+                    addNewFacility();
+                    break;
                 case "3":
                 case "4":
                     return;
@@ -132,17 +133,52 @@ public class FuramaControllers {
         }
     }
 
+    public static void addNewFacility() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Menu");
+            System.out.println(
+                    "1\tAdd new villa\n" +
+                            "2\tAdd new house\n" +
+                            "3\tAdd new room\n" +
+                            "4\tBack to menu\n" +
+                            "5.\tExit\n");
+
+            System.out.println("Nhập vào lựa chọn: ");
+            String input = scanner.nextLine();
+
+            switch (input) {
+                case "1":
+                    facilityService.addNewVilla();
+                    break;
+                case "2":
+                    facilityService.addNewHouse();
+                    break;
+                case "3":
+                    facilityService.addNewRoom();
+                    break;
+                case "4":
+                    return;
+                case "5":
+                    System.exit(5);
+                    break;
+            }
+        }
+    }
+
     public static void bookingManagement() {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
         while (true) {
             System.out.println(
-                            "1.\tAdd new booking \n" +
+                    "1.\tAdd new booking \n" +
                             "2.\tDisplay list booking \n" +
                             "3.\tCreate new contracts\n" +
                             "4.\tDisplay list contract\n" +
                             "5.\tEdit contracts\n" +
                             "6.\tReturn main menu\n");
+            String input = scanner.nextLine();
             switch (input) {
                 case "1":
                 case "2":
@@ -159,12 +195,12 @@ public class FuramaControllers {
 
     public static void promotionManagement() {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
         while (true) {
             System.out.println(
-                            "1.\tDisplay list cusomers use service \n" +
+                    "1.\tDisplay list customers use service \n" +
                             "2.\tDisplay list customers get voucher\n" +
                             "3.\tReturn main menu\n");
+            String input = scanner.nextLine();
             switch (input) {
                 case "1":
                 case "2":

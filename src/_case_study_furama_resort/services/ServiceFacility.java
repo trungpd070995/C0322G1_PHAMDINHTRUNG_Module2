@@ -5,4 +5,5 @@ public interface ServiceFacility  {
     void addNewVilla();
     void addNewHouse();
     void addNewRoom();
+    void displayMantain();
 }
