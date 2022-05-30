@@ -1,5 +1,6 @@
 package _case_study_furama_resort.controllers;
 
+import _case_study_furama_resort.services.impl.CustomerServiceImpl;
 import _case_study_furama_resort.services.impl.EmployeeServiceImpl;
 
 import java.util.Scanner;
@@ -61,9 +62,13 @@ public class FuramaControllers {
             switch (input) {
                 case "1":
                     employeeService.display();
+                    break;
                 case "2":
                     employeeService.addNew();
+                    break;
                 case "3":
+                    employeeService.edit();
+                    break;
                 case "4":
                     return;
                 default:
@@ -75,6 +80,7 @@ public class FuramaControllers {
     }
 
     public static void custommerManagement() {
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println(
@@ -85,8 +91,14 @@ public class FuramaControllers {
             String input = scanner.nextLine();
             switch (input) {
                 case "1":
+                    customerService.display();
+                    break;
                 case "2":
+                    customerService.addNew();
+                    break;
                 case "3":
+                    customerService.edit();
+                    break;
                 case "4":
                     return;
                 default:

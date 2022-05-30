@@ -51,15 +51,52 @@ private static Scanner scanner = new Scanner(System.in);
 
         Employee employee = new Employee(id,name,dateOfBirth,gender,idCar,phoneNumber,email,location,salary,level);
         employeeList.add(employee);
-    }
-
-    @Override
-    public void delete() {
-
+        System.out.println("Đã thêm mới thành công!");
     }
 
     @Override
     public void edit() {
+        System.out.println("Nhập vào id khách hàng cần chỉnh sửa !");
+        int id = Integer.parseInt(scanner.nextLine());
+        for (Employee employee : employeeList) {
+            if (id == employee.getId()){
+                System.out.println("Nhập id: ");
+                employee.setId(Integer.parseInt(scanner.nextLine()));
+
+                System.out.println("Nhập tên: ");
+                employee.setName(scanner.nextLine());
+
+                System.out.println("Nhập tuổi: ");
+                employee.setDateOfBirth(scanner.nextLine());
+
+                System.out.println("Nhập giới tính: ");
+                employee.setGender(scanner.nextLine());
+
+                System.out.println("Nhập chứng minh thư: ");
+                employee.setIdCar(Integer.parseInt(scanner.nextLine()));
+
+                System.out.println("Nhập số điện thoại: ");
+                employee.setPhoneNumber(Integer.parseInt(scanner.nextLine()));
+
+                System.out.println("Nhập email: ");
+                employee.setEmail(scanner.nextLine());
+
+                System.out.println("Nhập vị trí: ");
+                employee.setLocation(scanner.nextLine());
+
+                System.out.println("Nhập lương: ");
+                employee.setSalary(Integer.parseInt(scanner.nextLine()));
+
+                System.out.println("Nhập trình độ: ");
+                employee.setLevel(scanner.nextLine());
+
+                System.out.println("Đã chỉnh sửa thành công!");
+            }
+        }
+    }
+
+    @Override
+    public void delete() {
 
     }
 }
