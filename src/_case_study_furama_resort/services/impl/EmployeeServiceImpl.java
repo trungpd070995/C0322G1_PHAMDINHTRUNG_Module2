@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements ServiceEmployee {
-    private static final List<Employee> employeeList = new ArrayList<>();
-    private static final Scanner scanner = new Scanner(System.in);
+    private static List<Employee> employeeList = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
 
     static {
         Employee employee1 = new Employee(

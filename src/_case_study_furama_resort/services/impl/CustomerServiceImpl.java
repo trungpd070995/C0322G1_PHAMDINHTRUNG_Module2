@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements ServiceCustomer {
-    private static final List<Customer> listCustomer = new LinkedList<>();
-    private static final Scanner scanner = new Scanner(System.in);
+    private static List<Customer> listCustomer = new LinkedList<>();
+    private static Scanner scanner = new Scanner(System.in);
 
     static {
         Customer customer1 = new Customer(
