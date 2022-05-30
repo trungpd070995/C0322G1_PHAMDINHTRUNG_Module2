@@ -102,7 +102,7 @@ public class FacilityServiceImpl implements ServiceFacility {
         System.out.println("Nhập số tầng: ");
         int numberFloor = Integer.parseInt(scanner.nextLine());
 
-        villaList.add(new Villa(id,serviceName,usableArea,rentalCosts,maximumPeople,rentalType, standarRoom, poolArea, numberFloor));
+        villaList.add(new Villa(id, serviceName, usableArea, rentalCosts, maximumPeople, rentalType, standarRoom, poolArea, numberFloor));
         System.out.println("Đã thêm mới thành công !");
     }
 
@@ -132,7 +132,7 @@ public class FacilityServiceImpl implements ServiceFacility {
         System.out.println("Nhập số tầng: ");
         int numberFloors = Integer.parseInt(scanner.nextLine());
 
-        houseList.add(new House(id, serviceName, usableArea, rentalCosts, maximumPeople, rentalType, standarHouse,numberFloors));
+        houseList.add(new House(id, serviceName, usableArea, rentalCosts, maximumPeople, rentalType, standarHouse, numberFloors));
         System.out.println("Đã thêm mới thành công !");
     }
 
@@ -159,7 +159,7 @@ public class FacilityServiceImpl implements ServiceFacility {
         System.out.println("Dịch vụ miễn phí đi kèm: ");
         String freeServices = scanner.nextLine();
 
-        roomList.add(new Room(id, serviceName,usableArea,rentalCosts,maximumPeople,rentalType,freeServices));
+        roomList.add(new Room(id, serviceName, usableArea, rentalCosts, maximumPeople, rentalType, freeServices));
         System.out.println("Đã thêm mới thành công !");
     }
 

@@ -1,4 +1,5 @@
 package _case_study_furama_resort.services.impl;
+
 import _case_study_furama_resort.models.person_class.Employee;
 import _case_study_furama_resort.services.ServiceEmployee;
 
@@ -8,8 +9,18 @@ import java.util.Scanner;
 
 
 public class EmployeeServiceImpl implements ServiceEmployee {
-private static List<Employee> employeeList = new ArrayList<>();
-private static Scanner scanner = new Scanner(System.in);
+    private static final List<Employee> employeeList = new ArrayList<>();
+    private static final Scanner scanner = new Scanner(System.in);
+
+    static {
+        Employee employee1 = new Employee(1, "Trung", "25", "Nam", 21432435, 1256789, "dsad", "dsad", 2345, "Đại học");
+        Employee employee2 = new Employee(2, "Thành", "24", "Nam", 23565466, 1242424, "dsad", "dsad", 2345, "Trung cấp");
+        Employee employee3 = new Employee(3, "Phước", "23", "Nam", 34534534, 1236789, "dsad", "dsad", 2345, "Cao Đẳng");
+        employeeList.add(employee1);
+        employeeList.add(employee2);
+        employeeList.add(employee3);
+    }
+
     @Override
     public void display() {
         for (Employee employee : employeeList) {
@@ -49,7 +60,7 @@ private static Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập trình độ: ");
         String level = scanner.nextLine();
 
-        Employee employee = new Employee(id,name,dateOfBirth,gender,idCar,phoneNumber,email,location,salary,level);
+        Employee employee = new Employee(id, name, dateOfBirth, gender, idCar, phoneNumber, email, location, salary, level);
         employeeList.add(employee);
         System.out.println("Đã thêm mới thành công!");
     }
@@ -59,7 +70,7 @@ private static Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập vào id khách hàng cần chỉnh sửa !");
         int id = Integer.parseInt(scanner.nextLine());
         for (Employee employee : employeeList) {
-            if (id == employee.getId()){
+            if (id == employee.getId()) {
                 System.out.println("Nhập id: ");
                 employee.setId(Integer.parseInt(scanner.nextLine()));
 

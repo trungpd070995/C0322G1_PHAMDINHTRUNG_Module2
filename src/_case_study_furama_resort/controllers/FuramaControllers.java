@@ -1,7 +1,7 @@
 package _case_study_furama_resort.controllers;
-
 import _case_study_furama_resort.services.impl.CustomerServiceImpl;
 import _case_study_furama_resort.services.impl.EmployeeServiceImpl;
+import _case_study_furama_resort.services.impl.FacilityServiceImpl;
 
 import java.util.Scanner;
 
@@ -33,6 +33,7 @@ public class FuramaControllers {
                     break;
                 case "3":
                     facilityManagement();
+                    break;
                 case "4":
                     bookingManagement();
                     break;
@@ -108,6 +109,7 @@ public class FuramaControllers {
     }
 
     public static void facilityManagement() {
+        FacilityServiceImpl facilityService = new FacilityServiceImpl();
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         while (true) {
@@ -118,6 +120,8 @@ public class FuramaControllers {
                             "4.\tReturn main menu\n");
             switch (input) {
                 case "1":
+                    facilityService.display();
+                    break;
                 case "2":
                 case "3":
                 case "4":

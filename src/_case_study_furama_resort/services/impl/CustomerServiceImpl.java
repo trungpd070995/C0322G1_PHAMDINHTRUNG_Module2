@@ -1,13 +1,30 @@
 package _case_study_furama_resort.services.impl;
+
 import _case_study_furama_resort.models.person_class.Customer;
 import _case_study_furama_resort.services.ServiceCustomer;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class CustomerServiceImpl implements ServiceCustomer {
-    private static List<Customer> listCustomer = new LinkedList<>();
-    private static Scanner scanner = new Scanner(System.in);
+    private static final List<Customer> listCustomer = new LinkedList<>();
+    private static final Scanner scanner = new Scanner(System.in);
+
+    static {
+        Customer customer1 = new Customer(
+                1, "Hoàng", "01/02/1999", "Nam", 1234, 12345678,
+                "hoang@gmail.com", "vip", "Đà Nẵng");
+        Customer customer2 = new Customer(
+                2, "Phương", "03/04/1998", "Nam", 4321, 12345679,
+                "phuong@gmail.com", "vip", "Huế");
+        Customer customer3 = new Customer(
+                3, "Tuấn", "02/03/1997", "Nam", 6789, 12345676,
+                "tuan@gmail.com", "vip", "Quảng Bình");
+        listCustomer.add(customer1);
+        listCustomer.add(customer2);
+        listCustomer.add(customer3);
+    }
 
     @Override
     public void display() {
@@ -83,6 +100,7 @@ public class CustomerServiceImpl implements ServiceCustomer {
                 System.out.println("Nhập email: ");
                 customer.setEmail(scanner.nextLine());
 
+                System.out.println("Đã chỉnh sửa thành công!");
             }
         }
     }
