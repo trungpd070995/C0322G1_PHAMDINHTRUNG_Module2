@@ -12,7 +12,7 @@ public class FuramaControllers {
     public static void displayMainMenu() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("Menu");
+            System.out.println("====MENU-FURAMA-RESORT====");
             System.out.println(
                             "1.\tEmployee Management\n" +
                             "2.\tCustomer Management\n" +
@@ -21,7 +21,7 @@ public class FuramaControllers {
                             "5.\tPromotion Management\n" +
                             "6.\tExit\n");
 
-            System.out.println("Input your choice: ");
+            System.out.println("====Input your choice: ====");
             String input = scanner.nextLine();
             switch (input) {
                 case "1":
@@ -74,7 +74,6 @@ public class FuramaControllers {
                 default:
                     System.err.println("Your choice does not match our options");
                     break;
-
             }
         }
     }
@@ -125,6 +124,8 @@ public class FuramaControllers {
                     addNewFacility();
                     break;
                 case "3":
+                    facilityService.displayMantain();
+                    break;
                 case "4":
                     return;
                 default:

@@ -57,7 +57,7 @@ public class CustomerServiceImpl implements ServiceCustomer {
         System.out.println("Nhập loại khách hàng: ");
         String typeOfGuest = scanner.nextLine();
 
-        System.out.println("Nhập lương: ");
+        System.out.println("Nhập địa chỉ: ");
         String address = scanner.nextLine();
 
 
@@ -77,16 +77,14 @@ public class CustomerServiceImpl implements ServiceCustomer {
         int id = Integer.parseInt(scanner.nextLine());
         for (Customer customer : listCustomer) {
             if (id == customer.getId()) {
-                System.out.println("Nhập id: ");
-                customer.setId(Integer.parseInt(scanner.nextLine()));
 
-                System.out.println("Nhập tên: ");
+                System.out.println("Nhập tên cần chỉnh sửa: ");
                 customer.setName(scanner.nextLine());
 
-                System.out.println("Nhập tuổi: ");
+                System.out.println("Nhập tuổi cần chỉnh sửa: ");
                 customer.setDateOfBirth(scanner.nextLine());
 
-                System.out.println("Nhập giới tính: ");
+                System.out.println("Nhập giới tính cần chỉnh sửa: ");
                 customer.setGender(scanner.nextLine());
 
                 System.out.println("Nhập chứng minh thư: ");
@@ -95,8 +93,14 @@ public class CustomerServiceImpl implements ServiceCustomer {
                 System.out.println("Nhập số điện thoại: ");
                 customer.setPhoneNumber(Integer.parseInt(scanner.nextLine()));
 
-                System.out.println("Nhập email: ");
+                System.out.println("Nhập email cần chỉnh sửa: ");
                 customer.setEmail(scanner.nextLine());
+
+                System.out.println("Nhập loại khách hàng: ");
+                customer.setTypeOfGuest(scanner.nextLine());
+
+                System.out.println("Nhập địa chỉ: ");
+                customer.setAddress(scanner.nextLine());
 
                 System.out.println("Đã chỉnh sửa thành công!");
             }
