@@ -91,8 +91,8 @@ public  abstract class Facility {
 
     @Override
     public String toString() {
-        return "Facility{" +
-                "id='" + id + '\'' +
+        return "Facility {" +
+                " id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", area='" + area + '\'' +
                 ", rentalCost='" + rentalCost + '\'' +
@@ -100,4 +100,5 @@ public  abstract class Facility {
                 ", rentalType=" + rentalType +
                 '}';
     }
+
 }

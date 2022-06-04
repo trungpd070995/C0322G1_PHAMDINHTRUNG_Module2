@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 public class RegexData {
     private static Scanner scanner = new Scanner(System.in);
 
-//
     public static String regexVilla(String regex) {
         boolean check = true;
         String temp;
@@ -30,7 +29,6 @@ public class RegexData {
         } while (check);
         return temp;
     }
-
 
     public static String regexHouse(String regex) {
         boolean check = true;
@@ -100,7 +98,6 @@ public class RegexData {
                     check = true;
                     throw new AmoutException("Bạn đã nhập sai mã định dạng. Số lượng người tối đa phải >0 và nhỏ hơn <20");
                 }
-
             } catch (AmoutException e) {
                 System.err.println(e.getMessage());
             }
@@ -119,7 +116,6 @@ public class RegexData {
                     check = true;
                     throw new IntException("Bạn đã nhập sai mã định dạng. Diện tích phải lớn hơn 30m^2");
                 }
-
             } catch (IntException e) {
                 System.err.println(e.getMessage());
             }

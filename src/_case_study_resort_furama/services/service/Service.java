@@ -1,11 +1,11 @@
 package _case_study_resort_furama.services.service;
 
 public interface Service {
-    public void display();
+     void display();
 
-    public void addNew();
+     void addNew();
 
-    public void edit();
+     void edit();
 
-    public void remove();
+     void remove();
 }

@@ -47,7 +47,9 @@ public class FuramaControllers {
     }
     public static void displayEmployeeManagement(){
         Scanner scanner = new Scanner(System.in);
+
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+
         boolean check = true;
         while (check){
             System.out.println("1\tDisplay list employees");
@@ -72,10 +74,11 @@ public class FuramaControllers {
                     System.err.println("Nhập định dạng sai ! Chọn lại");
             }
         }
-
     }
     public static void displayCustomerManagement(){
+
         CustomerServiceImpl customerService = new CustomerServiceImpl();
+
         Scanner scanner = new Scanner(System.in);
         boolean check = true;
         while (check){
@@ -104,7 +107,9 @@ public class FuramaControllers {
 
     }
     public static void displayFacilityManagement(){
+
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
+
         Scanner scanner = new Scanner(System.in);
         boolean check = true;
         while (check){
@@ -130,7 +135,9 @@ public class FuramaControllers {
         }
     }
     public static void addNewFacilityManagement(){
+
         FacilityServiceImpl facilityService = new FacilityServiceImpl();
+
         Scanner scanner = new Scanner(System.in);
         boolean check = true;
         while (check){

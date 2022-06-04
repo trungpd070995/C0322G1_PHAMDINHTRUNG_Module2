@@ -16,15 +16,21 @@ public class EmployeeServiceImpl implements EmployeeService {
     private static final String FILE_EMPLOYEE = "src\\_case_study_resort_furama\\data\\employee.csv";
     private static final String FILE_NAME = "^[A-Z][a-z]+$";
     private static final String FILE_PHONE = "^0[0-9]{9,}$";
-    private static final String FILE_BIRTH ="^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$" ;
+    private static final String FILE_BIRTH = "^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$";
     private static List<String[]> list;
 
     public int checkId() {
-
-        if (employees.size() == 0) {
-            return  1;
+        int id =1; // gán id = 1
+        if (employees.isEmpty()) { //kiểm tra nếu rỗng return 1;
+            return id;
         } else {
-            return employees.get(employees.size( )- 1).getId() + 1;
+            for (Employee item : employees) {  //duyệt mảng
+                if (id<item.getId()) { //nếu id < id hiện tại
+                    id = item.getId(); // gán lại id
+                }
+            }
+            return (id + 1); //trả về id + thêm 1
+
         }
     }
 
@@ -32,27 +38,34 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void display() {
         list = WriteAndReadFile.readFile(FILE_EMPLOYEE);
         employees.clear();
-        Employee employee;
-        for (String[] item: list) {
-            employee = new Employee(item[0],
-                    item[1],
-                    Boolean.parseBoolean(item[2]),
-                    item[3],item[4],Integer.parseInt(item[5]),
-                    Integer.parseInt(item[6]),item[7],item[8],Double.parseDouble(item[9]));
-            employees.add(employee);
 
+        Employee employee;
+
+        for (String[] item : list) {
+            employee = new Employee(Integer.parseInt(item[0]),
+                    item[1],
+                    item[2],
+                    Boolean.parseBoolean(item[3]),
+                    item[4],
+                    item[5],
+                    Integer.parseInt(item[6]),
+                    item[7],
+                    item[8],
+                    Double.parseDouble(item[9]));
+            employees.add(employee);
         }
+
         for (Employee item : employees) {
             System.out.println(item.toString());
         }
     }
 
-    private String inputName(){
+    private String inputName() {
         System.out.println("Nhập tên nhân viên :");
         return RegexData.regexString(FILE_NAME);
     }
 
-    private String inputPhone(){
+    private String inputPhone() {
         System.out.println("Nhập số diện thoại nhân viên :");
         return RegexData.regexPhone(FILE_PHONE);
     }
@@ -62,14 +75,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         list = WriteAndReadFile.readFile(FILE_EMPLOYEE);
 
+        int id = this.checkId();
+
         String name = inputName();
 
         System.out.println("Nhập tuổi :");
-        String dateOfBirth = RegexData.regexAge(scanner.nextLine(),FILE_BIRTH);
+        String dateOfBirth = RegexData.regexAge(scanner.nextLine(), FILE_BIRTH);
+
         System.out.println("1.Nam    2.Nữ   ");
         boolean gender = false;
         int choice1 = Integer.parseInt(scanner.nextLine());
-        if(choice1 == 1){
+        if (choice1 == 1) {
             gender = true;
         }
 
@@ -81,14 +97,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("Nhập số CMND :");
         int idCard = Integer.parseInt(scanner.nextLine());
 
-        int id = this.checkId();
-
         System.out.println(" Trình độ :");
         System.out.println(" 1.Intermediate        2.Colleges         3.University      4. After University");
         String level = "";
         String choice = scanner.nextLine();
         boolean check = true;
-
         while (check) {
             switch (choice) {
                 case "1":
@@ -111,8 +124,6 @@ public class EmployeeServiceImpl implements EmployeeService {
                     System.out.println("Nhập lại :");
                     choice = scanner.nextLine();
             }
-
-
         }
 
         System.out.println("Chức vụ hiện tại :");
@@ -150,19 +161,23 @@ public class EmployeeServiceImpl implements EmployeeService {
                     System.out.println("Mời nhập lại");
                     indexChoice = scanner.nextLine();
             }
-
         }
+
         System.out.println("Nhập lương :");
         double salary = Double.parseDouble(scanner.nextLine());
 
-        String line =   name +"," + dateOfBirth + "," + gender + ","
-                + phoneNumber +"," + email + "," +idCard +","+ id + ","
-                +level +"," + position + "," +  salary  ;
-        WriteAndReadFile.writeFile(FILE_EMPLOYEE,line);
+        String line = id + ","
+                + name + ","
+                + dateOfBirth + ","
+                + gender + ","
+                + phoneNumber + ","
+                + email + ","
+                + idCard + ","
+                + level + ","
+                + position + ","
+                + salary;
+        WriteAndReadFile.writeFile(FILE_EMPLOYEE, line);
     }
-
-
-
 
     @Override
     public void edit() {
@@ -170,18 +185,23 @@ public class EmployeeServiceImpl implements EmployeeService {
         File file = new File(FILE_EMPLOYEE);
         list = WriteAndReadFile.readFile(FILE_EMPLOYEE);
         file.delete();
+
         System.out.println("Nhập id nhân viên muốn sửa thông tin :");
         int id = Integer.parseInt(scanner.nextLine());
+
         boolean check = false;
         for (Employee item : employees) {
             if (item.getId() == id) {
                 check = true;
                 System.out.println(item);
+
                 String name = inputName();
                 item.setName(name);
+
                 System.out.println("Nhập tuổi:");
-                String age = RegexData.regexAge(scanner.nextLine(),FILE_BIRTH);
+                String age = RegexData.regexAge(scanner.nextLine(), FILE_BIRTH);
                 item.setAge(age);
+
                 System.out.println("1.Nam    2.Nữ   ");
                 boolean gender = false;
                 int choice1 = Integer.parseInt(scanner.nextLine());
@@ -226,8 +246,6 @@ public class EmployeeServiceImpl implements EmployeeService {
                             System.out.println("Nhập lại :");
                             choice = scanner.nextLine();
                     }
-
-
                 }
                 item.setLevel(level);
 
@@ -270,14 +288,13 @@ public class EmployeeServiceImpl implements EmployeeService {
                 item.setPosition(position);
                 System.out.println("Nhập lương :");
                 item.setSalary(Double.parseDouble(scanner.nextLine()));
-
             }
 
-            String line =  item.getName()+","+ item.getAge()+","+item.isGender()+","+item.getPhoneNumber()+","+item.getEmail()
-                    +"," +item.getIdCard()+","+ item.getId() +","+ item.getLevel()+","+item.getPosition()+","+item.getSalary();
-           WriteAndReadFile.writeFile(FILE_EMPLOYEE,line);
-            System.out.println("Đã chỉnh sửa thông tin thành công !");
+            String line = item.getId() + "," + item.getName() + "," + item.getAge() + "," + item.isGender() + "," + item.getPhoneNumber() + "," + item.getEmail()
+                    + "," + item.getIdCard() + "," + item.getLevel() + "," + item.getPosition() + "," + item.getSalary();
+            WriteAndReadFile.writeFile(FILE_EMPLOYEE, line);
         }
+        System.out.println("Đã chỉnh sửa thông tin thành công !");
 
         if (!check) {
             System.err.println("Không có Id này trong danh sách !");

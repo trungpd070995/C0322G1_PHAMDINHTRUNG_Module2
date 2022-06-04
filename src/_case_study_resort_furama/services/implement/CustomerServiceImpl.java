@@ -33,7 +33,6 @@ public class CustomerServiceImpl implements CustomerService {
         for (Customer item : customers) {
             System.out.println(item.toString());
         }
-
     }
 
     private String inputName() {
@@ -51,23 +50,29 @@ public class CustomerServiceImpl implements CustomerService {
         return RegexData.regexString(FILE_EMAIL);
     }
 
-
     @Override
     public void addNew() {
         list = WriteAndReadFile.readFile(FILE_CUSTOMER);
+
         String name = inputName();
+
         System.out.println("Nhập tuổi khách hàng :");
         String age = RegexData.regexAge(scanner.nextLine(), FILE_BIRTH);
+
         System.out.println("1.Nam       2.Nữ");
         boolean gender = false;
         int choice = Integer.parseInt(scanner.nextLine());
         if (choice == 1) {
             gender = true;
         }
+
         String phoneNumber = inputPhone();
+
         String email = inputEmail();
+
         System.out.println("Nhập số CMND khách hàng :");
         int idCard = Integer.parseInt(scanner.nextLine());
+
         System.out.println("1.Diamond  2.Platinium   3.Gold   4Silver    5.Member");
         String typeCustomer = "";
         String choice1 = scanner.nextLine();
@@ -99,10 +104,13 @@ public class CustomerServiceImpl implements CustomerService {
                     choice1 = scanner.nextLine();
             }
         }
+
         System.out.println("Nhập địa chỉ khách hàng :");
         String address = scanner.nextLine();
+
         System.out.println("Nhập mã khách hàng :");
         String id = scanner.nextLine();
+
         String line = name + "," + age + "," + gender + "," + phoneNumber + "," + email + "," + idCard + ","
                 + typeCustomer + "," + address + "," + id;
         WriteAndReadFile.writeFile(FILE_CUSTOMER, line);
@@ -114,8 +122,10 @@ public class CustomerServiceImpl implements CustomerService {
         File file = new File(FILE_CUSTOMER);
         list = WriteAndReadFile.readFile(FILE_CUSTOMER);
         file.delete();
-        System.out.println("Nhập id muốn sửa của khách hàng :");
+
+        System.out.println("Nhập id khách hàng muốn chỉnh sửa ! :");
         String id = scanner.nextLine();
+
         boolean check = false;
         for (Customer item : customers) {
             if (item.getIdCustomer().equals(id)) {
@@ -123,23 +133,28 @@ public class CustomerServiceImpl implements CustomerService {
                 System.out.println(item);
                 String name = inputName();
                 item.setName(name);
+
                 System.out.println("Sửa tuổi khách hàng :");
                 String age = RegexData.regexAge(scanner.nextLine(), FILE_BIRTH);
                 item.setAge(age);
+
                 System.out.println("1.Nam    2.Nữ   ");
                 boolean gender = false;
                 int choice1 = Integer.parseInt(scanner.nextLine());
                 if (choice1 == 1) {
                     gender = true;
-
                 }
                 item.setGender(gender);
+
                 String phone = inputPhone();
                 item.setPhoneNumber(phone);
+
                 String email = inputEmail();
                 item.setEmail(email);
+
                 System.out.println("Sửa CMND của khách hàng :");
                 item.setEmail(scanner.nextLine());
+
                 System.out.println("1.Diamond  2.Platinium   3.Gold   4Silver    5.Member");
                 String typeCustomer = "";
                 String choice = scanner.nextLine();
@@ -170,7 +185,6 @@ public class CustomerServiceImpl implements CustomerService {
                             System.out.println("Nhập lại :");
                             choice = scanner.nextLine();
                     }
-
                 }
                 item.setTypeOfGuest(typeCustomer);
                 System.out.println("Sửa địa chỉ khách hàng :");
@@ -182,12 +196,11 @@ public class CustomerServiceImpl implements CustomerService {
                     + "," + item.getEmail() + "," + item.getIdCard() + "," + item.getTypeOfGuest() + "," + item.getAddress()
                     + "," + item.getIdCustomer();
             WriteAndReadFile.writeFile(FILE_CUSTOMER, line);
-
         }
+
         if (!check) {
             System.out.println("ID không có trong danh sách");
         }
-
     }
 
     @Override

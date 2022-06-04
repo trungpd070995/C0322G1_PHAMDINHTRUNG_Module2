@@ -1,12 +1,10 @@
 package _case_study_resort_furama.models.person;
 
-public class Employee extends Person {
+public class Employee extends Person implements Comparable<Employee> {
     private int id;
     private String level;
     private String position;
     private double salary;
-
-
 
     public Employee() {
     }
@@ -16,17 +14,16 @@ public class Employee extends Person {
         this.level = level;
         this.position = position;
         this.salary = salary;
-        this.id = id;
     }
 
     public Employee(
+            int id,
             String name,
             String age,
             boolean gender,
             String phoneNumber,
             String email,
             int idCard,
-            int id,
             String level,
             String position,
             double salary
@@ -36,8 +33,6 @@ public class Employee extends Person {
         this.position = position;
         this.salary = salary;
         this.id = id; ;
-
-
     }
 
     public int getId() {
@@ -72,8 +67,10 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
-
-
+    @Override
+    public int compareTo(Employee employee) {
+        return this.getId() - employee.getId();
+    }
 
     @Override
     public String toString() {

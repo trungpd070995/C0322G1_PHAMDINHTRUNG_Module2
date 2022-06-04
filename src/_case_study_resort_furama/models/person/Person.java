@@ -21,9 +21,6 @@ public  abstract class Person {
         this.idCard = idCard;
     }
 
-
-
-
     public String getName() {
         return name;
     }

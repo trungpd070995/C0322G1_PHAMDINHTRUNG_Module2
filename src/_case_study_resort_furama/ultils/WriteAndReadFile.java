@@ -22,15 +22,12 @@ public class WriteAndReadFile {
                 String[] arrStr = line.split(",");
                 list.add(arrStr);
             }
-
-
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
         return list;
-
     }
 
     public static void writeFile(String filePath, String line) {
@@ -41,7 +38,6 @@ public class WriteAndReadFile {
         ) {
             bufferedWriter.write(line);
             bufferedWriter.newLine();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
