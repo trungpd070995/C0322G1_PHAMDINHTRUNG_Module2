@@ -22,7 +22,7 @@ public class ImplService implements Service {
     public void addNhanVienQuanLy() {
         readFile();
         nhanVienList.add(new NhanVienQuanLy(getId(), getMaNhanVien(), getHoTen(), getNgaySinh(), getDiaChi(), getLuongCoban(), getHeSoLuong()));
-        System.out.println("Thêm thành công");
+        System.out.println(" Đã thêm mới thành công !");
         writeFile();
     }
 
@@ -30,7 +30,7 @@ public class ImplService implements Service {
     public void addNhanVienSanXuat() {
         readFile();
         nhanVienList.add(new NhanVienSanXuat(getId(), getMaNhanVien(), getHoTen(), getNgaySinh(), getDiaChi(), (int) getSoSanPham(), getGiaMoiSanPham()));
-        System.out.println("Thêm thành công");
+        System.out.println("Đã thêm mới thành công !");
         writeFile();
     }
 
@@ -49,20 +49,20 @@ public class ImplService implements Service {
         String id = scanner.nextLine();
         for (NhanVien nhanVien : nhanVienList) {
             if (nhanVien.getId().equals(id)) {
-                System.out.println("bạn muốn xóa " + nhanVien);
+                System.out.println("Bạn muốn xóa " + nhanVien);
                 do {
                     String choose = scanner.nextLine();
                     switch (choose) {
                         case "1":
                             nhanVienList.remove(nhanVien);
-                            System.out.println("bạn đã xóa thành công");
+                            System.out.println("Đã xóa thành công");
                             writeFile();
                             return;
                         case "2":
                             System.out.println("Xóa không thành công");
                             return;
                         default:
-                            System.out.println("lựa chọn không hợp lệ vui lòng chọn lại");
+                            System.out.println("Vui lòng chọn lại !");
                     }
                 } while (true);
 
@@ -78,7 +78,7 @@ public class ImplService implements Service {
     @Override
     public void find() {
         readFile();
-        System.out.println("Nhập từ bạn muốn tìm kiếm");
+        System.out.println("Nhập từ khoá tìm kiếm");
         String find = scanner.nextLine();
         for (NhanVien nhanVien : nhanVienList) {
             if (nhanVien.getInfor().contains(find)) {
@@ -130,7 +130,7 @@ public class ImplService implements Service {
                 if (Regex.regexBirthDay(temp)) {
                     return temp;
                 } else {
-                    System.out.println("Ngày sinh phải trên 18 tuổi");
+                    System.out.println("Ngày sinh phải trên 18 tuổi và dưới 100");
                 }
             } else {
                 System.out.println("Ngày sinh phải đúng định dạng dd/MM/yyyy");
