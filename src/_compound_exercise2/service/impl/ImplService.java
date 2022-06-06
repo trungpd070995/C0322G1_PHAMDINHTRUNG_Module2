@@ -87,8 +87,6 @@ public class ImplService implements Service {
         }
     }
 
-
-
     public String getId() {
         int id = 1;
         if (nhanVienList.isEmpty()) {
