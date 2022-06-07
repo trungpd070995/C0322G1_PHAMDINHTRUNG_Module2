@@ -32,9 +32,14 @@ public class NhanVienQuanLy extends NhanVien{
 
     @Override
     public String toString() {
-        return "NhanVienQuanLy{" +
-                "luongCoBan=" + luongCoBan +
-                ", heSoLuong=" + heSoLuong +
+        return "Nhân Viên Quản Lý {" +
+                "  Id: " + super.getId() +
+                ", Mã nhân viên: " + getMaNhanVien() +
+                ", Họ Và Tên: " + super.getHoVaTen() +
+                ", Ngày sinh: "+ super.getNgaySinh() +
+                ", Địa Chỉ: "+ super.getDiaChi()+
+                ", Lương cơ bản: " + luongCoBan +
+                ", Hệ số lương " + heSoLuong +
                 '}';
     }
 

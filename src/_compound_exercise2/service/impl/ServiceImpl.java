@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 import static java.lang.Double.parseDouble;
 
-public class ImplService implements Service {
+public class ServiceImpl implements Service {
     static List<NhanVien> nhanVienList = new LinkedList<>();
     static Scanner scanner = new Scanner(System.in);
 
@@ -51,6 +51,7 @@ public class ImplService implements Service {
             if (nhanVien.getId().equals(id)) {
                 System.out.println("Bạn muốn xóa " + nhanVien);
                 do {
+                    System.out.println("1. Yes   " + "   2.No");
                     String choose = scanner.nextLine();
                     switch (choose) {
                         case "1":
@@ -81,7 +82,8 @@ public class ImplService implements Service {
         System.out.println("Nhập từ khoá tìm kiếm");
         String find = scanner.nextLine();
         for (NhanVien nhanVien : nhanVienList) {
-            if (nhanVien.getInfor().contains(find)) {
+            if (nhanVien.getId().contains(find) || nhanVien.getHoVaTen().contains(find)||
+                    nhanVien.getNgaySinh().contains(find)||nhanVien.getDiaChi().contains(find)){
                 System.out.println(nhanVien);
             }
         }

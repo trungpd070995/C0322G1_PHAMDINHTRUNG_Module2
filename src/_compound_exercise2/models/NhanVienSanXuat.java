@@ -32,9 +32,14 @@ public class NhanVienSanXuat extends NhanVien {
 
     @Override
     public String toString() {
-        return "NhanVienSanXuat{" +
-                "soSanPham=" + soSanPham +
-                ", giaMoiSanPham=" + giaMoiSanPham +
+        return " Nhân viên sản xuất {" +
+                " Id: " + getId() +
+                ", Mã Nhân Viên: " + getMaNhanVien() +
+                ", Họ Và Tên: " + getHoVaTen() +
+                ", Ngày Sinh: " + getNgaySinh() +
+                ", Địa chỉ: " + getDiaChi() +
+                ", Số sản phẩm: " + soSanPham +
+                ", Giá mới sản phẩm: " + giaMoiSanPham +
                 '}';
     }
 
